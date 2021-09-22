@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import PropertyCard from './PropertyCard';
-
+import Calendar from './Calendar';
 const PropertyCards = (props) => {
 
    

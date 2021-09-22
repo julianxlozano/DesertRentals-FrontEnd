@@ -6,6 +6,7 @@ import MyNav from './components/MyNav';
 import PropertyPage from './components/PropertyPage';
 import Home from './components/Home';
 import AdminLogin from './components/AdminLogin';
+import Calendar from './components/Calendar';
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat"}}>
       <MyNav/>
+      <Calendar/>
       <BrowserRouter>
           <Switch>
             <Route 
