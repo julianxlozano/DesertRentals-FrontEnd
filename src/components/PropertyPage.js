@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import { useLocation } from 'react-router';
 import Calendar from './Calendar';
 
-class PropertyPage extends Component {
-    render() {
+const PropertyPage = (props) =>{
+    const location = useLocation();
+
         return (
             <div className="all-property-cards col d-flex justify-content-center">
                 <div className="row row-cols-1 row-cols-md-2 g-4">
                     <div className="col align-item-center">
                         <div className="card mb-3">
-                            <h3 className="card-header">Things</h3>
+                            <h3 className="card-header">{location.state.property.name}</h3>
                             <div className="card-body">
                                 <h5 className="card-title"></h5>
                                 <h6 className="card-subtitle text-muted"></h6>
@@ -52,7 +54,7 @@ class PropertyPage extends Component {
         </div>
  
         );
-    }
+   
 }
 
 export default PropertyPage;
