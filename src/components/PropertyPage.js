@@ -12,6 +12,26 @@ const PropertyPage = (props) =>{
     const [phoneNumber,setPhoneNumber] = useState();
     const [details,setDetails] = useState();
 
+    const handleSumbit = (e) =>{
+        e.preventDefault();
+        fetch(`http://localhost:3000/properties/${property.id}/bookings`,{
+        method:'POST',
+        headers:{
+          'Content-type':'application/json',
+          'Accept':'application/json'
+        },
+        body: JSON.stringify({
+            email: email,
+            name: name,
+            phoneNumber: phoneNumber,
+            details: details
+        })
+    })
+    .then(resp=>{
+        return resp.json()
+    })
+  
+
 
 
 
