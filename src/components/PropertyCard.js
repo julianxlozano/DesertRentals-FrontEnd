@@ -15,7 +15,7 @@ const PropertyCard = (props) =>{
                         </div>
                        <img src="/Placeholder.jpg"/>
                         <div className="card-body">
-                            <p className="card-text">A Nice little bio here</p>
+                            <p className="card-text">{props.property.blurb}</p>
                         </div>
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">Winter Price: {props.property.pricing_winter}</li>
