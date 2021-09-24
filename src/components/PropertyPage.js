@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import { useLocation} from 'react-router';
 import { useState } from 'react';
 import Calendar from './Calendar';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const PropertyPage = (props) =>{
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
     const location = useLocation();
     const property = location.state.property
+
 
     const [email,setEmail] = useState();
     const [name,setName] = useState();
@@ -21,15 +26,22 @@ const PropertyPage = (props) =>{
           'Accept':'application/json'
         },
         body: JSON.stringify({
+            booking:{
             email: email,
             name: name,
-            phoneNumber: phoneNumber,
-            details: details
+            phone_number: phoneNumber,
+            details: details,
+            booked: false,
+            property_id: property.id,
+            start_date: startDate,
+            end_date: endDate
+        }
         })
     })
     .then(resp=>{
         return resp.json()
     })
+}
   
 
 
@@ -69,7 +81,23 @@ const PropertyPage = (props) =>{
                        
                             <div className="card-body">
                                 <p className="card-text"></p>
-                                <Calendar/>
+                                <DatePicker
+                                    wrapperClassName="datepicker"
+                                    selected={startDate}
+                                    selectsStart
+                                    startDate={startDate}
+                                    endDate={endDate}
+                                    onChange={date => setStartDate(date)}
+                                    />
+                                    <DatePicker
+                                    wrapperClassName="datepicker"
+                                    selected={endDate}
+                                    selectsEnd
+                                    startDate={startDate}
+                                    endDate={endDate}
+                                    minDate={startDate}
+                                    onChange={date => setEndDate(date)}
+                                    />
                             </div>
                             <form className="booking-form"> 
                                 <div className="form-group">
@@ -83,7 +111,7 @@ const PropertyPage = (props) =>{
                                     <textarea onChange={e=>setDetails(e.target.value)} className="form-control" id="exampleFormControlInput1" rows="10"></textarea>
                                 </div>
                                 <div className="btn-group">
-                                 <input type="submit" className="btn btn-success email-btn" id="exampleFormControlInput1" placeholder="(xxx)xxx-xxxx"></input>
+                                 <input onClick={handleSumbit} type="submit" className="btn btn-success email-btn" id="exampleFormControlInput1" placeholder="(xxx)xxx-xxxx"></input>
                                 </div>
 
                             </form>
