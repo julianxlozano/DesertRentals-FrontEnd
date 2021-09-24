@@ -17,7 +17,6 @@ const App = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat"}}>
       <MyNav/>
-      <Calendar/>
       <BrowserRouter>
           <Switch>
             <Route 
