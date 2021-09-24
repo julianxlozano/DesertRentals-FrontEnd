@@ -24,7 +24,19 @@ code {
   margin-top: 2em;
 }
 
+.indv-property-cards{
+  margin: 2em;
+}
+
 .book-btn{
   margin: 1em;
+}
+
+.booking-form{
+  margin: 1em;
+}
+
+.email-btn{
+  margin-top:1em;
 }
 
