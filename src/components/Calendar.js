@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 export default function Calendar() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
-    const [setDate, setSetDate] = useState(new Date());
+ 
     return (
       <div>
         <DatePicker

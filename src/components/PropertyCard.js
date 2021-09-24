@@ -24,7 +24,7 @@ const PropertyCard = (props) =>{
                             <li className="list-group-item">Summer Price: {props.property.pricing_summer}</li>
                         </ul>
                         <div className= "btn-group">
-                            <Link className="book-btn btn btn-outline-info" to={`property/${props.property.id}`}>Book Now!</Link>
+                            <Link className="book-btn btn btn-outline-info" to={{pathname:`property/${props.property.id}`, state:{property:props.property} }}>Book Now!</Link>
                         </div>
               </div>
         </div>
