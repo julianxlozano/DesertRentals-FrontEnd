@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-import { useLocation } from 'react-router';
+import { useLocation} from 'react-router';
+import { useState } from 'react';
 import Calendar from './Calendar';
 
 const PropertyPage = (props) =>{
     const location = useLocation();
     const property = location.state.property
+
+    const [email,setEmail] = useState();
+    const [name,setName] = useState();
+    const [phoneNumber,setPhoneNumber] = useState();
+    const [details,setDetails] = useState();
+
+
+
 
         return (
             <div className="indv-property-cards container col d-flex justify-content-center">
@@ -45,13 +54,13 @@ const PropertyPage = (props) =>{
                             <form className="booking-form"> 
                                 <div className="form-group">
                                     <label for="exampleFormControlInput1">Email address</label>
-                                    <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
+                                    <input onChange={e=>setEmail(e.target.value)} type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
                                     <label for="exampleFormControlInput1">Name</label>
-                                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Jane Doe"></input>
+                                    <input onChange={e=>setName(e.target.value)} type="text" className="form-control" id="exampleFormControlInput1" placeholder="Jane Doe"></input>
                                     <label for="exampleFormControlInput1">Phone Number</label>
-                                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="(xxx)xxx-xxxx"></input>
+                                    <input onChange={e=>setPhoneNumber(e.target.value)} type="text" className="form-control" id="exampleFormControlInput1" placeholder="(xxx)xxx-xxxx"></input>
                                     <label for="exampleFormControlInput1">Please send me an email with the details of your stay.</label>
-                                    <textarea className="form-control" id="exampleFormControlInput1" rows="10"></textarea>
+                                    <textarea onChange={e=>setDetails(e.target.value)} className="form-control" id="exampleFormControlInput1" rows="10"></textarea>
                                 </div>
                                 <div className="btn-group">
                                  <input type="submit" className="btn btn-success email-btn" id="exampleFormControlInput1" placeholder="(xxx)xxx-xxxx"></input>
