@@ -5,8 +5,8 @@ import 'bootswatch/dist/journal/bootstrap.css';
 import MyNav from './components/MyNav';
 import PropertyPage from './components/PropertyPage';
 import Home from './components/Home';
-import AdminLogin from './components/AdminLogin';
-import Calendar from './components/Calendar';
+import Login from './components/Login';
+
 
 
 class App extends Component {
@@ -56,9 +56,9 @@ componentDidMount(){
               )}
             />
             <Route 
-              exact path='/adminlogin' 
+              exact path='/login' 
               render={props => (
-              <AdminLogin {...props} />
+              <Login {...props} />
               )}
             />
             <Route 

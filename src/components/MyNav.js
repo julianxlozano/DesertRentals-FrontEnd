@@ -16,7 +16,7 @@ import {Navbar, Nav} from 'react-bootstrap';
               
                 </Navbar.Brand>
              
-                {<Nav.Link href='/admin'className="adminlink" onClick={handleClick}>Admin</Nav.Link>}
+                {<Nav.Link href='/login'className="adminlink" onClick={handleClick}>Admin</Nav.Link>}
             </Navbar> 
           )
 }

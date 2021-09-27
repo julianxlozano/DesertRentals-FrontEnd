@@ -81,6 +81,7 @@ const PropertyPage = (props) =>{
                        
                             <div className="card-body">
                                 <p className="card-text"></p>
+                                Start Date
                                 <DatePicker
                                     wrapperClassName="datepicker"
                                     selected={startDate}
@@ -89,6 +90,7 @@ const PropertyPage = (props) =>{
                                     endDate={endDate}
                                     onChange={date => setStartDate(date)}
                                     />
+                                    End Date
                                     <DatePicker
                                     wrapperClassName="datepicker"
                                     selected={endDate}
