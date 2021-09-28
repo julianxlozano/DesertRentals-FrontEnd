@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 
-class Admin extends Component {
-    render() {
+const Admin = (props) => {
+
+    if (props.loggedInStatus){
+   
         return (
             <div>
                 Admin section
             </div>
         );
+    }else{
+        return <h1>Nice Try!</h1>
     }
+   
 }
 
 export default Admin;

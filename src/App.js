@@ -66,7 +66,7 @@ handleLogout = () => {
           height: "1000px",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat"}}>
-      <MyNav/>
+      <MyNav loggedInStatus={this.state.isLoggedIn}/>
       <BrowserRouter>
           <Switch>
             <Route 
@@ -90,7 +90,7 @@ handleLogout = () => {
              <Route 
               exact path='/admin' 
               render={props => (
-              <Admin {...props} />
+              <Admin {...props} loggedInStatus={this.state.isLoggedIn} />
               )}
             />
           </Switch>
