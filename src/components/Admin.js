@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import AdminPropertyCards from './AdminPropertyCards';
 
 const Admin = (props) => {
 
     if (props.loggedInStatus){
    
         return (
-            <div>
-                Admin section
+            <div className="container">
+                <AdminPropertyCards/>
             </div>
         );
     }else{

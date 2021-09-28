@@ -90,7 +90,7 @@ handleLogout = () => {
              <Route 
               exact path='/admin' 
               render={props => (
-              <Admin {...props} loggedInStatus={this.state.isLoggedIn} />
+              <Admin {...props} loggedInStatus={this.state.isLoggedIn} properties={this.state.properties}/>
               )}
             />
           </Switch>
