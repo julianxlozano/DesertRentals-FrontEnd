@@ -23,16 +23,17 @@ handleChange = (event) => {
       [name]: value
     })
   };
-  
+
 handleSubmit = (event) => {
     event.preventDefault()
     const {username, password} = this.state
-  let user = {
+  let admin = {
       username: username,
       password: password
     }
+   // debugger
     
-axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
+axios.post('http://localhost:3000/login', {admin})
     .then(response => {
      // console.log(response)
      //debugger
@@ -49,7 +50,7 @@ axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
   };
 
 redirect = () => {
-    this.props.history.push('/')
+    this.props.history.push('/admin')
   }
 
 handleErrors = () => {
@@ -93,7 +94,7 @@ return (
                               value={password}
                               onChange={this.handleChange}
                             />
-                            <button className="homebtn btn btn-success" placeholder="submit" type="submit">
+                            <button className="homebtn btn btn-success" type="submit">
                               Log In
                             </button>
                         

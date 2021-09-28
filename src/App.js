@@ -6,6 +6,7 @@ import MyNav from './components/MyNav';
 import PropertyPage from './components/PropertyPage';
 import Home from './components/Home';
 import Login from './components/Login';
+import Admin from './components/Admin';
 
 
 
@@ -45,8 +46,8 @@ handleLogin = (data) => {
   //debugger   
     this.setState({
       isLoggedIn: true,
-      user: data.user,
-      user_token: data.token   
+      user: data.user
+
     })
   }
 
@@ -84,6 +85,12 @@ handleLogout = () => {
               exact path='/property/:id' 
               render={props => (
               <PropertyPage {...props} />
+              )}
+            />
+             <Route 
+              exact path='/admin' 
+              render={props => (
+              <Admin {...props} />
               )}
             />
           </Switch>
