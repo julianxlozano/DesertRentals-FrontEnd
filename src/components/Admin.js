@@ -4,10 +4,9 @@ import AdminPropertyCards from './AdminPropertyCards';
 const Admin = (props) => {
 
     if (props.loggedInStatus){
-   
         return (
             <div className="container">
-                <AdminPropertyCards/>
+                <AdminPropertyCards properties={props.properties}/>
             </div>
         );
     }else{
