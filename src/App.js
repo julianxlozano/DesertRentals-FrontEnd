@@ -14,7 +14,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      properties: []
+      properties: [],
+      isLoggedIn: false,
+      user:{}
     };
   }
 
@@ -39,6 +41,23 @@ componentDidMount(){
 }
 
 
+handleLogin = (data) => {
+  //debugger   
+    this.setState({
+      isLoggedIn: true,
+      user: data.user,
+      user_token: data.token   
+    })
+  }
+
+handleLogout = () => {
+    this.setState({
+    isLoggedIn: false,
+    user: {}
+    })
+  }
+
+
   render(){
   return (
     <div className="App" style={{
@@ -58,7 +77,7 @@ componentDidMount(){
             <Route 
               exact path='/login' 
               render={props => (
-              <Login {...props} />
+              <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
               )}
             />
             <Route 

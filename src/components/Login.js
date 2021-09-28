@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       username: '',
-      email: '',
       password: '',
       errors: ''
      };
@@ -24,12 +23,12 @@ handleChange = (event) => {
       [name]: value
     })
   };
+  
 handleSubmit = (event) => {
     event.preventDefault()
-    const {username, email, password} = this.state
-let user = {
+    const {username, password} = this.state
+  let user = {
       username: username,
-      email: email,
       password: password
     }
     
@@ -68,7 +67,7 @@ render() {
     const {username, email, password} = this.state
 return (
       <div className="container col d-flex justify-content-center">
-         <div class="login-box card border-primary mb-3">
+         <div class="login-box card border-warning mb-3">
            <div className="card-body">
             <h5 class="card-title">Login</h5>
               <div class="form-group">
@@ -97,9 +96,7 @@ return (
                             <button className="homebtn btn btn-success" placeholder="submit" type="submit">
                               Log In
                             </button>
-                            <div>
-                            or <Link to='/signup'>sign up</Link>
-                            </div>
+                        
                             
                           </form>
                           <div>
