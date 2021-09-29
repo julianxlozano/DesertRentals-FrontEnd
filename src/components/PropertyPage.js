@@ -20,7 +20,7 @@ const PropertyPage = (props) =>{
     const [phoneNumber,setPhoneNumber] = useState();
     const [details,setDetails] = useState();
     const [booked,setBooked] = useState(false);
-    const [excludeDates,setExcludedDates] = useState([])
+    const [excludedDates,setExcludedDates] = useState([])
 
     const handleSumbit = (e) =>{
         e.preventDefault();
@@ -58,6 +58,18 @@ const PropertyPage = (props) =>{
         return datesToExclude
     };
 
+    const flatten = arr => {
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (Array.isArray(arr[i])) {
+            newArr = newArr.concat(flatten(arr[i]));
+          } else {
+            newArr.push(arr[i]);
+          }
+        }
+        return newArr;
+      };
+
     useEffect(()=>{
         
         async function fetchBookings() {
@@ -72,8 +84,8 @@ const PropertyPage = (props) =>{
                 const newEndDate = new Date(booking.end_date);
                 return getDates(newStartDate,newEndDate)
             })
-            debugger
-            return exDates
+           // debugger
+             setExcludedDates(flatten(exDates))
           }
         
           fetchBookings();
@@ -134,7 +146,7 @@ const PropertyPage = (props) =>{
                                     startDate={startDate}
                                     endDate={endDate}
                                     onChange={date => setStartDate(date)}
-                                   // excludeDates={excludeBookedDates()}
+                                    excludeDates={excludedDates}
                                     />
                                     End Date
                                     <DatePicker
@@ -144,6 +156,7 @@ const PropertyPage = (props) =>{
                                     startDate={startDate}
                                     endDate={endDate}
                                     minDate={startDate}
+                                    excludeDates={excludedDates}
                                     onChange={date => setEndDate(date)}
                                     />
                             </div>
