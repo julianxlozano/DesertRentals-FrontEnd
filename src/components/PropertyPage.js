@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Calendar from './Calendar';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import ModalMessage from './ModalMessage';
 
 const PropertyPage = (props) =>{
     const [startDate, setStartDate] = useState(new Date());
@@ -16,6 +17,7 @@ const PropertyPage = (props) =>{
     const [name,setName] = useState();
     const [phoneNumber,setPhoneNumber] = useState();
     const [details,setDetails] = useState();
+    const [booked,setBooked] = useState(false);
 
     const handleSumbit = (e) =>{
         e.preventDefault();
@@ -39,7 +41,7 @@ const PropertyPage = (props) =>{
         })
     })
     .then(resp=>{
-        return resp.json()
+        setBooked(true)
     })
 }
   
@@ -49,6 +51,7 @@ const PropertyPage = (props) =>{
 
         return (
             <div className="indv-property-cards container col d-flex justify-content-center">
+                {booked? <ModalMessage/>:null}
                 <div className="row row-cols-1 row-cols-md-2 g-4">
                     <div className="col align-item-center">
                         <div className="card mb-3">
