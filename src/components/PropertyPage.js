@@ -5,6 +5,7 @@ import Calendar from './Calendar';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ModalMessage from './ModalMessage';
+import Carosel from './Carosel';
 
 const PropertyPage = (props) =>{
     const [startDate, setStartDate] = useState(new Date());
@@ -51,7 +52,7 @@ const PropertyPage = (props) =>{
 
         return (
             <div className="indv-property-cards container col d-flex justify-content-center">
-                {booked? <ModalMessage/>:null}
+                {booked? <ModalMessage setBooked={setBooked}/>:null}
                 <div className="row row-cols-1 row-cols-md-2 g-4">
                     <div className="col align-item-center">
                         <div className="card mb-3">
@@ -60,7 +61,7 @@ const PropertyPage = (props) =>{
                                 <h5 className="card-title"></h5>
                                 <h6 className="card-subtitle text-muted"></h6>
                             </div>
-                            <img src="/Placeholder.jpg"/>
+                            <Carosel propId={property.id}/>
                             <div className="card-body">
                                 <p className="card-text">{property.description}</p>
                             </div>
