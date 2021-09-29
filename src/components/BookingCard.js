@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const BookingCard = (props) =>{
 
         return (
-            <div className="card text-white bg-info mb-3" >
+            <div className="card text-white bg-secondary mb-3" >
             <div className="card-header">{props.booking.name} - {props.booking.email}</div>
             <div className="card-body">
             <table class="table table-hover">
@@ -23,10 +23,10 @@ const BookingCard = (props) =>{
                     </tr>
 
             </table>
-            <div className= "btn-group">
-                            <button className="book-btn btn btn-outline-info">Confirm Booking</button>
-            </div>
           </div>
+          <div className= "btn-group">
+                    <button type="button" className="book-btn btn btn-success">Confirm Booking</button>
+            </div>
           </div>
         );
     

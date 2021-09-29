@@ -26,8 +26,8 @@ const AdminPropertyCard = (props) =>{
                         <div className="card-body">
                             <h5 className="card-title">{props.property.location}</h5>
                         </div>
-                       <img src="/Placeholder.jpg"/>
-                       <h5 className="card-subtitle text-muted">Pending Bookings:</h5>
+                       <img className="prop-img" src="/Placeholder.jpg"/>
+                       <h5 id="pend-book" className="card-subtitle text-muted">Pending Bookings:</h5>
                        { bookings.map(booking=> <BookingCard booking={booking}/>) }
                      
               </div>
