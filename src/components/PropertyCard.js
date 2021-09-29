@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom'
+import Carosel from "./Carosel";
 
 
 const PropertyCard = (props) =>{
@@ -13,7 +14,7 @@ const PropertyCard = (props) =>{
                             <h5 className="card-title">{props.property.location}</h5>
                             <h6 className="card-subtitle text-muted">Available Now!</h6>
                         </div>
-                       <img src="/Placeholder.jpg"/>
+                        <Carosel propId={props.property.id}/>
                         <div className="card-body">
                             <p className="card-text">{props.property.blurb}</p>
                         </div>
