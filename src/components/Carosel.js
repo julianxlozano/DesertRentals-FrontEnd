@@ -6,13 +6,46 @@ const Carosel = (props) => {
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img class="d-block w-100" src={`/property${props.propId}/casa1.jpg`} alt="First slide"/>
+                    <img class="d-block w-100" src={`/property${props.propId}/1.jpg`} alt="First slide"/>
                     </div>
                     <div class="carousel-item">
-                    <img class="d-block w-100" src={`/property${props.propId}/casa1.jpg`} alt="Second slide"/>
+                    <img class="d-block w-100" src={`/property${props.propId}/2.jpg`} alt="Second slide"/>
                     </div>
                     <div class="carousel-item">
-                    <img class="d-block w-100" src={`/property${props.propId}/casa1.jpg`} alt="Third slide"/>
+                    <img class="d-block w-100" src={`/property${props.propId}/3.jpg`} alt="Third slide"/>
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src={`/property${props.propId}/4.jpg`} alt="Second slide"/>
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src={`/property${props.propId}/5.jpg`} alt="Third slide"/>
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src={`/property${props.propId}/6.jpg`} alt="Second slide"/>
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src={`/property${props.propId}/7.jpg`} alt="Third slide"/>
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src={`/property${props.propId}/8.jpg`} alt="Second slide"/>
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src={`/property${props.propId}/9.jpg`} alt="Third slide"/>
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src={`/property${props.propId}/10.jpg`} alt="Second slide"/>
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src={`/property${props.propId}/11.jpg`} alt="Third slide"/>
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src={`/property${props.propId}/12.jpg`} alt="Second slide"/>
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src={`/property${props.propId}/13.jpg`} alt="Third slide"/>
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src={`/property${props.propId}/14.jpg`} alt="Third slide"/>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
