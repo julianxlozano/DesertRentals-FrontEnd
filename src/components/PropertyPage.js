@@ -84,23 +84,12 @@ const PropertyPage = (props) =>{
                 const newEndDate = new Date(booking.end_date);
                 return getDates(newStartDate,newEndDate)
             })
-           // debugger
+    
              setExcludedDates(flatten(exDates))
           }
         
           fetchBookings();
       },[props])
-
-    const excludeBookedDates = () =>{
-        //return an array of excluded dates
-        debugger
-        console.log('')
-    }
-
-
-  
-
-
 
 
         return (
@@ -143,8 +132,7 @@ const PropertyPage = (props) =>{
                                     wrapperClassName="datepicker"
                                     selected={startDate}
                                     selectsStart
-                                    startDate={startDate}
-                                    endDate={endDate}
+
                                     onChange={date => setStartDate(date)}
                                     excludeDates={excludedDates}
                                     />
