@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { useLocation} from 'react-router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Calendar from './Calendar';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -19,6 +19,7 @@ const PropertyPage = (props) =>{
     const [phoneNumber,setPhoneNumber] = useState();
     const [details,setDetails] = useState();
     const [booked,setBooked] = useState(false);
+    const [excludeDates,setExcludedDates] = useState([])
 
     const handleSumbit = (e) =>{
         e.preventDefault();
@@ -44,7 +45,28 @@ const PropertyPage = (props) =>{
     .then(resp=>{
         setBooked(true)
     })
-}
+    }
+
+    useEffect(()=>{
+
+        async function fetchBookings() {
+              const response = await fetch(`http://localhost:3000/properties/${property.id}}/bookings`)
+              const fetchedBookings = await response.json(response)
+              //debugger
+              //if bookings === true set excluded dates to an array of excluded dates
+          }
+    
+          fetchBookings();
+  
+      },[props])
+
+    const excludeBookedDates = () =>{
+        //return an array of excluded dates
+        debugger
+        console.log('')
+    }
+
+
   
 
 
@@ -93,6 +115,7 @@ const PropertyPage = (props) =>{
                                     startDate={startDate}
                                     endDate={endDate}
                                     onChange={date => setStartDate(date)}
+                                   // excludeDates={excludeBookedDates()}
                                     />
                                     End Date
                                     <DatePicker
