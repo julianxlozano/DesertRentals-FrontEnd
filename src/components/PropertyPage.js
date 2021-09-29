@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ModalMessage from './ModalMessage';
 import Carosel from './Carosel';
+import { format, formatDistance, formatRelative, subDays, addDays } from 'date-fns'
 
 const PropertyPage = (props) =>{
     const [startDate, setStartDate] = useState(new Date());
@@ -47,17 +48,35 @@ const PropertyPage = (props) =>{
     })
     }
 
-    useEffect(()=>{
+    const getDates = (newStartDate, newEndDate) => {
+        const datesToExclude = [];
+        let currentDate = startDate;
+        while (currentDate <= newEndDate) {
+            datesToExclude.push(currentDate);
+            currentDate = addDays(currentDate, 1);
+        }
+        return datesToExclude
+    };
 
+    useEffect(()=>{
+        
         async function fetchBookings() {
               const response = await fetch(`http://localhost:3000/properties/${property.id}}/bookings`)
               const fetchedBookings = await response.json(response)
-              //debugger
-              //if bookings === true set excluded dates to an array of excluded dates
+           
+              const allBookedBookings = fetchedBookings.filter(booking=>booking.booked === true)
+      
+
+            const exDates = allBookedBookings.map(booking=>{
+                const newStartDate = new Date(booking.start_date)
+                const newEndDate = new Date(booking.end_date);
+                return getDates(newStartDate,newEndDate)
+            })
+            debugger
+            return exDates
           }
-    
+        
           fetchBookings();
-  
       },[props])
 
     const excludeBookedDates = () =>{
