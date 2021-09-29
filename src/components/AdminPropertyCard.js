@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import BookingCard from "./BookingCard";
 
 const AdminPropertyCard = (props) =>{
 
@@ -24,13 +25,11 @@ const AdminPropertyCard = (props) =>{
                         <h3 className="card-header">{props.property.name}</h3>
                         <div className="card-body">
                             <h5 className="card-title">{props.property.location}</h5>
-                          {bookings.map(booking=>booking.name)}
                         </div>
                        <img src="/Placeholder.jpg"/>
                        <h5 className="card-subtitle text-muted">Pending Bookings:</h5>
-                        <div className= "btn-group">
-                            <Link className="book-btn btn btn-outline-info" to={{pathname:`property/${props.property.id}`, state:{property:props.property} }}>Confirm Booking</Link>
-                        </div>
+                       { bookings.map(booking=> <BookingCard booking={booking}/>) }
+                     
               </div>
         </div>
     
