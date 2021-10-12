@@ -50,7 +50,7 @@ const PropertyPage = (props) =>{
 
     const getDates = (newStartDate, newEndDate) => {
         const datesToExclude = [];
-        let currentDate = startDate;
+        let currentDate = newStartDate;
         while (currentDate <= newEndDate) {
             datesToExclude.push(currentDate);
             currentDate = addDays(currentDate, 1);
@@ -132,7 +132,6 @@ const PropertyPage = (props) =>{
                                     wrapperClassName="datepicker"
                                     selected={startDate}
                                     selectsStart
-
                                     onChange={date => setStartDate(date)}
                                     excludeDates={excludedDates}
                                     />

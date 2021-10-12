@@ -8,7 +8,7 @@ const PropertyCard = (props) =>{
 
     return(
         <div className="col align-item-center">
-               <div className="card mb-3">
+               <div className="property-card card mb-3">
                         <h3 className="card-header">{props.property.name}</h3>
                         <div className="card-body">
                             <h5 className="card-title">{props.property.location}</h5>

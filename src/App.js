@@ -63,7 +63,7 @@ handleLogout = () => {
   return (
     <div className="App" style={{
           backgroundImage:`url(/BGPreview.jpeg)`,
-          height: "1000px",
+          height: "1423px",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat"}}>
       <MyNav loggedInStatus={this.state.isLoggedIn}/>
