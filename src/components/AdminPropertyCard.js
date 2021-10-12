@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import BookingCard from "./BookingCard";
+import BookedCard from "./BookedCard";
 
 const AdminPropertyCard = (props) =>{
 
@@ -16,7 +17,7 @@ const AdminPropertyCard = (props) =>{
         }
         fetchBookings();
 
-    },[props])
+    },[props,bookings])
 
 
     return(
@@ -30,7 +31,7 @@ const AdminPropertyCard = (props) =>{
                        <h5 id="pend-book" className="card-subtitle text-muted">Pending Bookings:</h5>
                        { bookings.map(booking=> booking.booked ? null : <BookingCard booking={booking}/>) }
                        <h5 id="pend-book" className="card-subtitle text-muted">Confirmed Bookings:</h5>
-                       { bookings.map(booking=> booking.booked ? booking.name  : null) }
+                       { bookings.map(booking=> booking.booked ?  <BookedCard booking={booking}/> : null) }
                      
               </div>
         </div>

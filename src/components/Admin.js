@@ -10,7 +10,7 @@ const Admin = (props) => {
             </div>
         );
     }else{
-        return <h1>Nice Try!</h1>
+        return <h1>Oops!</h1>
     }
    
 }
