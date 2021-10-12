@@ -26,6 +26,7 @@ code {
 
 .indv-property-cards{
   margin: 2em;
+
 }
 
 .book-btn{
@@ -34,6 +35,7 @@ code {
 
 .booking-form{
   margin: 1em;
+
 }
 
 .email-btn{
@@ -54,3 +56,6 @@ code {
 }
 
 
+.prop-desc{
+  height: 10em;
+}

@@ -104,7 +104,7 @@ const PropertyPage = (props) =>{
                                 <h6 className="card-subtitle text-muted"></h6>
                             </div>
                             <Carosel propId={property.id}/>
-                            <div className="card-body">
+                            <div className="prop-desc card-body overflow-auto">
                                 <p className="card-text">{property.description}</p>
                             </div>
                             <ul className="list-group list-group-flush">
