@@ -4,7 +4,7 @@ const BookedCard = (props) =>{
 
 
     return (
-        <div className="card text-white bg-primary mb-3" >
+        <div className="booking-card card text-white bg-success mb-3" >
         <div className="card-header">{props.booking.name} - {props.booking.email}</div>
         <div className="card-body">
         <table class="table table-hover">

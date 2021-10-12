@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const BookingCard = (props) =>{
 
@@ -16,7 +16,7 @@ const BookingCard = (props) =>{
         }
 
         return (
-            <div className="card text-white bg-secondary mb-3" >
+            <div className="booking-card card text-white bg-secondary mb-3" >
             <div className="card-header">{props.booking.name} - {props.booking.email}</div>
             <div className="card-body">
             <table class="table table-hover">

@@ -28,10 +28,12 @@ const AdminPropertyCard = (props) =>{
                             <h5 className="card-title">{props.property.location}</h5>
                         </div>
                        <img className="prop-img" src={`/property${props.property.id}/1.jpg`}/>
-                       <h5 id="pend-book" className="card-subtitle text-muted">Pending Bookings:</h5>
-                       { bookings.map(booking=> booking.booked ? null : <BookingCard booking={booking}/>) }
-                       <h5 id="pend-book" className="card-subtitle text-muted">Confirmed Bookings:</h5>
-                       { bookings.map(booking=> booking.booked ?  <BookedCard booking={booking}/> : null) }
+                       <div className="card-body">
+                            <h5 id="pend-book" className="card-subtitle text-muted">Pending Bookings:</h5>
+                            { bookings.map(booking=> booking.booked ? null : <BookingCard booking={booking}/>) }
+                            <h5 id="pend-book" className="card-subtitle text-muted">Confirmed Bookings:</h5>
+                            { bookings.map(booking=> booking.booked ?  <BookedCard booking={booking}/> : null) }
+                        </div>
                      
               </div>
         </div>
