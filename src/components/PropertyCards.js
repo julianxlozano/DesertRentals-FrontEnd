@@ -6,6 +6,7 @@ export default class PropertyCards extends React.Component{
 
  
     render(){
+        //will say props.region here so we can let tenant know what catagory they're looking at 
         return (
         
             <div className="all-property-cards container col d-flex justify-content-center">
