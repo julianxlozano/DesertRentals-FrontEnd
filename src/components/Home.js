@@ -9,7 +9,7 @@ const Home = (props) => {
     useEffect(()=>{
         const filteredProperties = props.properties.filter(property=> property.region === propRegion)
         setSelectedProperties(filteredProperties)
-    },[propRegion])
+    },[props,propRegion])
 
                return (
                        <>
