@@ -17,13 +17,15 @@ import axios from 'axios'
     return(
             <Navbar  expand="lg" className="navbarTop">
                 <Navbar.Brand href="/">
-                <img src={'/DR Rough Crop.png'} style={{width:222, marginTop: -7}} alt="Desert Rentals"/>
+                <img src={'/KingMountainPreview.png'} style={{width:222, marginTop: -7, marginLeft: 10}} alt="Desert Rentals"/>
               
                 </Navbar.Brand>
              
               
                 {props.loggedInStatus ? <Nav.Link href='/' onClick={handleClick}>Log Out</Nav.Link>
                 : <Nav.Link href='/login'className="adminlink">Admin</Nav.Link>}
+
+                        
             </Navbar> 
           )
 }

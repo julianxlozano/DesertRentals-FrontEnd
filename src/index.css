@@ -59,3 +59,8 @@ code {
 .prop-desc{
   height: 10em;
 }
+
+.radio-btns{
+  margin-top:1em;
+  text-align: center;
+}
