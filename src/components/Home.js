@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropertyCards from './PropertyCards';
 
 const Home = (props) => {
-console.log(props.properties)
+
    const [propRegion,setPropRegion] = useState('desert')
   const [selectedProperties, setSelectedProperties] = useState([])
 
