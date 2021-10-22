@@ -62,7 +62,7 @@ handleLogout = () => {
   render(){
   return (
     <div className="App" style={{
-          backgroundImage:`url(/BGPreview.jpeg)`,
+          backgroundImage:`url(/KingMountainBG.jpeg)`,
           height: "1423px",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat"}}>
