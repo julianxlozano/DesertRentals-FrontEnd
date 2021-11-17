@@ -1,7 +1,6 @@
 import React from 'react';
 
 const BookingCard = (props) =>{
-
         const confirmBooking = () =>{
                 fetch(`http://localhost:3000/properties/${props.booking.property_id}/bookings/${props.booking.id}`,{
                         method:'PATCH',
@@ -14,7 +13,6 @@ const BookingCard = (props) =>{
                         })
                     })
         }
-
         return (
             <div className="booking-card card text-white bg-secondary mb-3" >
             <div className="card-header">{props.booking.name} - {props.booking.email}</div>

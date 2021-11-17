@@ -7,6 +7,7 @@ import BookedCard from "./BookedCard";
 const AdminPropertyCard = (props) =>{
 
     const [bookings,setBookings] = useState([]);
+  
     
     useEffect(()=>{
 
@@ -19,6 +20,7 @@ const AdminPropertyCard = (props) =>{
 
     },[props,bookings])
 
+    
 
     return(
         <div className="col align-item-center">
@@ -30,7 +32,7 @@ const AdminPropertyCard = (props) =>{
                        <img className="prop-img" src={`/property${props.property.id}/1.jpg`}/>
                        <div className="card-body">
                             <h5 id="pend-book" className="card-subtitle text-muted">Pending Bookings:</h5>
-                            { bookings.map(booking=> booking.booked ? null : <BookingCard booking={booking}/>) }
+                            { bookings.map(booking=> booking.booked ? null : <BookingCard booking={booking} />) }
                             <h5 id="pend-book" className="card-subtitle text-muted">Confirmed Bookings:</h5>
                             { bookings.map(booking=> booking.booked ?  <BookedCard booking={booking}/> : null) }
                         </div>
