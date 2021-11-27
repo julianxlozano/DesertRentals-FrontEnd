@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const BookingCard = (props) =>{
+
+        const [booked,setBooked] = useState(false)
         const confirmBooking = () =>{
+             //   fetch(`https://immense-lake-22245.herokuapp.com/properties/${props.booking.property_id}/bookings/${props.booking.id}`,{
                 fetch(`http://localhost:3000/properties/${props.booking.property_id}/bookings/${props.booking.id}`,{
                         method:'PATCH',
                         headers:{
@@ -11,7 +14,7 @@ const BookingCard = (props) =>{
                         body: JSON.stringify({
                             booked: true
                         })
-                    })
+                    }).then(()=>setBooked(true))
         }
         return (
             <div className="booking-card card text-white bg-secondary mb-3" >
@@ -36,7 +39,7 @@ const BookingCard = (props) =>{
             </table>
           </div>
           <div className= "btn-group">
-                    <button onClick={confirmBooking} type="button" className="book-btn btn btn-success">Confirm Booking</button>
+                    <button disabled={booked} onClick={confirmBooking} type="button" className="book-btn btn btn-success">{booked ? "Booking Confirmed!" : "Confirm Booking"}</button>
             </div>
           </div>
         );

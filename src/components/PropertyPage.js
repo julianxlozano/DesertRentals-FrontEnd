@@ -24,6 +24,7 @@ const PropertyPage = (props) =>{
 
     const handleSumbit = (e) =>{
         e.preventDefault();
+    //    fetch(`https://immense-lake-22245.herokuapp.com/properties/${property.id}/bookings`,{
         fetch(`http://localhost:3000/properties/${property.id}/bookings`,{
         method:'POST',
         headers:{
@@ -73,7 +74,7 @@ const PropertyPage = (props) =>{
     useEffect(()=>{
         
         async function fetchBookings() {
-              const response = await fetch(`http://localhost:3000/properties/${property.id}}/bookings`)
+              const response = await fetch(`https://immense-lake-22245.herokuapp.com/properties/${property.id}}/bookings`)
               const fetchedBookings = await response.json(response)
            
               const allBookedBookings = fetchedBookings.filter(booking=>booking.booked === true)

@@ -28,6 +28,7 @@ componentDidMount(){
 }
 
  getProperties (){
+  //  fetch(`https://immense-lake-22245.herokuapp.com/properties`,{
     fetch(`http://localhost:3000/properties`,{
         method:'GET',
         headers:{
