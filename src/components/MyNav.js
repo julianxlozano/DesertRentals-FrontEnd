@@ -5,7 +5,7 @@ import axios from 'axios'
  const MyNav = (props) =>{
 
   const handleClick = () => {
-    axios.delete('http://localhost:3001/logout')
+    axios.delete('https://immense-lake-22245.herokuapp.com/logout')
     .then(response => {
     props.handleLogout()
     props.history.push('/')

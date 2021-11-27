@@ -12,8 +12,8 @@ const AdminPropertyCard = (props) =>{
     useEffect(()=>{
 
       async function fetchBookings() {
-          //  const response = await fetch(`https://immense-lake-22245.herokuapp.com/properties/${props.property.id}}/bookings`)
-          const response = await fetch(`http://localhost:3000/properties/${props.property.id}}/bookings`)
+            const response = await fetch(`https://immense-lake-22245.herokuapp.com/properties/${props.property.id}}/bookings`)
+       //   const response = await fetch(`http://localhost:3000/properties/${props.property.id}}/bookings`)
      
             const fetchedBookings = await response.json(response)
             setBookings(fetchedBookings)

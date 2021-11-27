@@ -5,8 +5,8 @@ const BookingCard = (props) =>{
 
         const [booked,setBooked] = useState(false)
         const confirmBooking = () =>{
-             //   fetch(`https://immense-lake-22245.herokuapp.com/properties/${props.booking.property_id}/bookings/${props.booking.id}`,{
-                fetch(`http://localhost:3000/properties/${props.booking.property_id}/bookings/${props.booking.id}`,{
+                fetch(`https://immense-lake-22245.herokuapp.com/properties/${props.booking.property_id}/bookings/${props.booking.id}`,{
+             //   fetch(`http://localhost:3000/properties/${props.booking.property_id}/bookings/${props.booking.id}`,{
                         method:'PATCH',
                         headers:{
                           'Content-type':'application/json',
