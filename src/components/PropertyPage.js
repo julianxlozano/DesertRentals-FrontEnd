@@ -74,7 +74,8 @@ const PropertyPage = (props) =>{
     useEffect(()=>{
         
         async function fetchBookings() {
-              const response = await fetch(`https://immense-lake-22245.herokuapp.com/properties/${property.id}}/bookings`)
+         //     const response = await fetch(`https://immense-lake-22245.herokuapp.com/properties/${property.id}}/bookings`)
+         const response = await fetch(`http://localhost:3000/properties/${property.id}}/bookings`)
               const fetchedBookings = await response.json(response)
            
               const allBookedBookings = fetchedBookings.filter(booking=>booking.booked === true)
@@ -95,7 +96,7 @@ const PropertyPage = (props) =>{
 
         return (
             <div className="indv-property-cards container col d-flex justify-content-center">
-                {booked? <ModalMessage setBooked={setBooked}/>:null}
+                {booked? <ModalMessage msg="We'll be in touch with you soon to confirm your booking!" title="Thank You!" setBooked={setBooked}/>:null}
                 <div className="row row-cols-1 row-cols-md-2 g-4">
                     <div className="col align-item-center">
                         <div className="card mb-3">

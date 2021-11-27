@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import ModalMessage from './ModalMessage';
 
 const BookingCard = (props) =>{
 
@@ -17,7 +18,9 @@ const BookingCard = (props) =>{
                     }).then(()=>setBooked(true))
         }
         return (
+                
             <div className="booking-card card text-white bg-secondary mb-3" >
+            {booked? <ModalMessage msg="This Booking has been confirmed" title="All Set!" setBooked={setBooked}/>:null}
             <div className="card-header">{props.booking.name} - {props.booking.email}</div>
             <div className="card-body">
             <table class="table table-hover">
