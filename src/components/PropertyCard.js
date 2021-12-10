@@ -12,7 +12,7 @@ const PropertyCard = (props) =>{
                         <h3 className="card-header">{props.property.name}</h3>
                         <div className="card-body">
                             <h5 className="card-title">{props.property.location}</h5>
-                            <h6 className="card-subtitle text-muted">Available Now!</h6>
+                            <h6 className="card-subtitle text-muted">{props.property.available ? 'Available Now!' : "Currently Unavailable - Happy Renters!"}</h6>
                         </div>
                         <Carosel propId={props.property.id}/>
                         <div className="card-body">
