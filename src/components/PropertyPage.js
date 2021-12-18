@@ -25,7 +25,7 @@ const PropertyPage = (props) =>{
     const handleSumbit = (e) =>{
         e.preventDefault();
         fetch(`https://immense-lake-22245.herokuapp.com/properties/${property.id}/bookings`,{
-   //     fetch(`http://localhost:3000/properties/${property.id}/bookings`,{
+     //   fetch(`http://localhost:3000/properties/${property.id}/bookings`,{
         method:'POST',
         headers:{
           'Content-type':'application/json',
