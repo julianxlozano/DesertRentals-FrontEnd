@@ -22,6 +22,8 @@ const PropertyPage = (props) =>{
     const [booked,setBooked] = useState(false);
     const [excludedDates,setExcludedDates] = useState([])
 
+    const [showAreaText,setShowAreaText] = useState(false);
+
     const handleSumbit = (e) =>{
         e.preventDefault();
         fetch(`https://immense-lake-22245.herokuapp.com/properties/${property.id}/bookings`,{
@@ -105,6 +107,18 @@ const PropertyPage = (props) =>{
                                 <h5 className="card-title"></h5>
                                 <h6 className="card-subtitle text-muted"></h6>
                             </div>
+                            {property.region === 'desert' && <button className="btn btn-primary" onClick={()=> setShowAreaText(!showAreaText)}>Click here to learn more about the area!</button>}
+                            {showAreaText && <div className="card-body">
+                                <p className="card-text">The roads are wide for cycling and there are several local clubs you can join for group rides. Wear bright colors… this is a retirement community!
+Green Valley Recreation Center is available for small fee. Check them out here: <a href='www.gvrec.org'>www.gvrec.org</a>. <br></br>
+West Center, the recreation facility closest to the rentals, has a 25 yard pool with back stroke flags.. What a treat to swim outside!!! <br></br>
+Wisdoms Cafe in Amado, south of Tubac. Great food and wonderful margaritas.. there is usually a 2 for 1 either Tuesday or Thursday.. check before you go! <a href='www.wisdomscafe.com'>www.wisdomscafe.com</a>. <br></br> 
+Tubac is nearby a quaint artist fill town, restaurants, shopping, and exihibits history of the area. <a href='www.tubacaz.com'>www.tubacaz.com</a>. <br></br>  
+Green Valley has 5 golf courses with near by Quail Creek having a few private courses.<br></br>
+A fresh Farmers Market is held in the El Rodeo parking lot just off Espreanza. For information regarding days and times visit: <a href='www.heirloomfm.org'>www.heirloomfm.org</a>. <br></br></p>
+                            </div>}
+
+
                             <Carosel propId={property.id}/>
                             <div className="prop-desc card-body overflow-auto">
                                 <p className="card-text">{property.description}</p>
